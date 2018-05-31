@@ -1,0 +1,53 @@
+{
+  "_from": "cordova-plugin-otp-auto-verification",
+  "_id": "cordova-plugin-otp-auto-verification@1.0.0",
+  "_inBundle": false,
+  "_integrity": "sha512-sg50CH1h1MSptQTA7BxkbBI7qdQUuBjStd+5Qa4OmuekN0KBqvgojo56a3Bqe/rjzZ7svpXltSTPlaKMU4746g==",
+  "_location": "/cordova-plugin-otp-auto-verification",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "tag",
+    "registry": true,
+    "raw": "cordova-plugin-otp-auto-verification",
+    "name": "cordova-plugin-otp-auto-verification",
+    "escapedName": "cordova-plugin-otp-auto-verification",
+    "rawSpec": "",
+    "saveSpec": null,
+    "fetchSpec": "latest"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/cordova-plugin-otp-auto-verification/-/cordova-plugin-otp-auto-verification-1.0.0.tgz",
+  "_shasum": "4a407c647b5add5a9ecc60c1f80c101bd9ef4a61",
+  "_spec": "cordova-plugin-otp-auto-verification",
+  "_where": "C:\\xampp\\htdocs\\Celcabsapp",
+  "author": {
+    "name": "sandeep dillerao"
+  },
+  "bugs": {
+    "url": "https://github.com/sandeepdillerao/cordova-plugin-otp-auto-verification/issues"
+  },
+  "bundleDependencies": false,
+  "cordova": {
+    "id": "OTPAutoVerification",
+    "platforms": [
+      "android"
+    ]
+  },
+  "deprecated": false,
+  "description": "A plugin for Autoverification of OTP",
+  "homepage": "https://github.com/sandeepdillerao/cordova-plugin-otp-auto-verification#readme",
+  "keywords": [
+    "ecosystem:cordova",
+    "cordova-android"
+  ],
+  "license": "MIT License ",
+  "name": "cordova-plugin-otp-auto-verification",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sandeepdillerao/cordova-plugin-otp-auto-verification.git"
+  },
+  "version": "1.0.0"
+}
