@@ -336,6 +336,14 @@ module.exports = [
     "clobbers": [
       "OTPAutoVerification"
     ]
+  },
+  {
+    "id": "pushbots-cordova-plugin.PushbotsPlugin",
+    "file": "plugins/pushbots-cordova-plugin/www/pushbots.js",
+    "pluginId": "pushbots-cordova-plugin",
+    "clobbers": [
+      "PushbotsPlugin"
+    ]
   }
 ];
 module.exports.metadata = 
@@ -352,7 +360,8 @@ module.exports.metadata =
   "cordova-plugin-network-information": "2.0.1",
   "cordova-plugin-vibration": "3.1.0",
   "cordova-plugin-whitelist": "1.3.3",
-  "cordova-plugin-otp-auto-verification": "1.0.1"
+  "cordova-plugin-otp-auto-verification": "1.0.1",
+  "pushbots-cordova-plugin": "1.5.13"
 };
 // BOTTOM OF METADATA
 });

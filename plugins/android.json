@@ -42,6 +42,9 @@
     },
     "cordova-plugin-otp-auto-verification": {
       "PACKAGE_NAME": "com.phonegap.celcabs"
+    },
+    "pushbots-cordova-plugin": {
+      "PACKAGE_NAME": "com.phonegap.celcabs"
     }
   },
   "dependent_plugins": {}

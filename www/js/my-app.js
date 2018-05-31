@@ -49,17 +49,37 @@ function onBackKeyDown() {
 }
 function checkStorage()
 { 
-window.plugins.PushbotsPlugin.initialize("5b0548471db2dc33d672ae79", {"android":{"sender_id":"846304146142"}});
- /* window.plugins.PushbotsPlugin.initialize("5b0548471db2dc33d672ae79", {"android":{"sender_id":"846304146142"}});
+  window.plugins.PushbotsPlugin.initialize("5b0548471db2dc33d672ae79", {"android":{"sender_id":"846304146142"}});
 // Only with First time registration
 window.plugins.PushbotsPlugin.on("registered", function(token){
   console.log("Registration Id:" + token);
+  alert("TOKEN ::"+token);
 });
 
 //Get user registrationId/token and userId on PushBots, with evey launch of the app even launching with notification
 window.plugins.PushbotsPlugin.on("user:ids", function(data){
   console.log("user:ids" + JSON.stringify(data));
-}); */
+  alert("JSON ::"+JSON.stringify(data));
+}); 
+
+window.plugins.PushbotsPlugin.on("notification:received", function(data){
+    console.log("received:" + JSON.stringify(data));
+    alert("received:" + JSON.stringify(data));
+    //iOS: [foreground/background]
+    console.log("notification received from:" + data.cordova_source);
+    alert("notification received from:" + data.cordova_source);
+    //Silent notifications Only [iOS only]
+    //Send CompletionHandler signal with PushBots notification Id
+    window.plugins.PushbotsPlugin.done(data.pb_n_id);
+});
+ 
+window.plugins.PushbotsPlugin.on("notification:clicked", function(data){
+    // var userToken = data.token; 
+       // var userId = data.userId;
+    console.log("clicked:" + JSON.stringify(data));
+    alert("clicked:" + JSON.stringify(data));
+});
+
    checkConnection();
    //alert("in checkStorage func");
     var value = window.localStorage.getItem("session_mobilenum");

@@ -56,6 +56,9 @@
     },
     "cordova-plugin-otp-auto-verification": {
       "PACKAGE_NAME": "com.phonegap.celcabs"
+    },
+    "pushbots-cordova-plugin": {
+      "PACKAGE_NAME": "com.phonegap.celcabs"
     }
   },
   "dependent_plugins": {},
@@ -440,6 +443,14 @@
       "clobbers": [
         "OTPAutoVerification"
       ]
+    },
+    {
+      "file": "plugins/pushbots-cordova-plugin/www/pushbots.js",
+      "id": "pushbots-cordova-plugin.PushbotsPlugin",
+      "pluginId": "pushbots-cordova-plugin",
+      "clobbers": [
+        "PushbotsPlugin"
+      ]
     }
   ],
   "plugin_metadata": {
@@ -455,6 +466,7 @@
     "cordova-plugin-network-information": "2.0.1",
     "cordova-plugin-vibration": "3.1.0",
     "cordova-plugin-whitelist": "1.3.3",
-    "cordova-plugin-otp-auto-verification": "1.0.1"
+    "cordova-plugin-otp-auto-verification": "1.0.1",
+    "pushbots-cordova-plugin": "1.5.13"
   }
 }

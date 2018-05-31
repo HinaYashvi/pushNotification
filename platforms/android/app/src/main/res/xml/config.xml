@@ -36,9 +36,12 @@
     <feature name="OTPAutoVerification">
         <param name="android-package" value="org.apache.cordova.OTPAutoVerification.OTPAutoVerification" />
     </feature>
+    <feature name="PushbotsPlugin">
+        <param name="android-package" value="com.pushbots.plugin.PushbotsPlugin" />
+    </feature>
     <name>Celcabs</name>
     <description>
-        CELCABS - MOBILE APPLICATION.
+        CELCABS - TEST MOBILE APPLICATION.
     </description>
     <author email="support@phonegap.com" href="http://phonegap.com">
         Celcabs Team
