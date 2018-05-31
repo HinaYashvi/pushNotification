@@ -344,6 +344,14 @@ module.exports = [
     "clobbers": [
       "PushbotsPlugin"
     ]
+  },
+  {
+    "id": "cordova-push-notifications.PushNotification",
+    "file": "plugins/cordova-push-notifications/www/PushNotification.js",
+    "pluginId": "cordova-push-notifications",
+    "clobbers": [
+      "PushNotification"
+    ]
   }
 ];
 module.exports.metadata = 
@@ -361,7 +369,8 @@ module.exports.metadata =
   "cordova-plugin-vibration": "3.1.0",
   "cordova-plugin-whitelist": "1.3.3",
   "cordova-plugin-otp-auto-verification": "1.0.1",
-  "pushbots-cordova-plugin": "1.5.13"
+  "pushbots-cordova-plugin": "1.5.13",
+  "cordova-push-notifications": "1.2.4"
 };
 // BOTTOM OF METADATA
 });

@@ -45,6 +45,9 @@
     },
     "pushbots-cordova-plugin": {
       "PACKAGE_NAME": "com.phonegap.celcabs"
+    },
+    "cordova-push-notifications": {
+      "PACKAGE_NAME": "com.phonegap.celcabs"
     }
   },
   "dependent_plugins": {

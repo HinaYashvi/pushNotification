@@ -36,6 +36,9 @@
     <feature name="OTPAutoVerification">
         <param name="android-package" value="org.apache.cordova.OTPAutoVerification.OTPAutoVerification" />
     </feature>
+    <feature name="PushPlugin">
+        <param name="android-package" value="com.plugin.gcm.PushPlugin" />
+    </feature>
     <feature name="PushbotsPlugin">
         <param name="android-package" value="com.pushbots.plugin.PushbotsPlugin" />
     </feature>
@@ -75,5 +78,7 @@
     <allow-intent href="market:*" />
     <preference name="loglevel" value="DEBUG" />
     <preference name="DisallowOverscroll" value="true" />
-    <preference name="android-minSdkVersion" value="14" />
+    <preference name="android-minSdkVersion" value="15" />
+    <preference name="phonegap-version" value="cli-8.0.0" />
+    <preference name="android-build-tool" value="gradle" />
 </widget>
