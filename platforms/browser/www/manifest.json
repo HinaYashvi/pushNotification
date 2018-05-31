@@ -1,11 +1,11 @@
 {
   "background_color": "#FFF",
   "display": "standalone",
-  "name": "helloworld",
-  "short_name": "helloworld",
-  "version": "com.phonegap.helloworld",
-  "description": "Hello World sample application that responds to the deviceready event.",
-  "author": "PhoneGap Team",
+  "name": "Celcabs",
+  "short_name": "Celcabs",
+  "version": "com.phonegap.celcabs",
+  "description": "CELCABS - MOBILE APPLICATION.",
+  "author": "Celcabs Team",
   "icons": [],
   "start_url": "index.html",
   "theme_color": "#2196f3"
