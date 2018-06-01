@@ -48,16 +48,47 @@ function onBackKeyDown() {
        }
 }
 
+
 function checkStorage()
 { 
   alert("in");
-  cordova.plugins.notification.local.schedule({
+
+  Notification.requestPermission().then(function(result) {
+  if (result === 'denied') {
+    console.log('Permission wasn\'t granted. Allow a retry.');
+    alert('Permission wasn\'t granted. Allow a retry.');
+    return;
+  }
+  if (result === 'default') {
+    console.log('The permission request was dismissed.');
+    alert('The permission request was dismissed.');
+    return;
+  }
+  // Do something with the granted permission.
+});
+
+  if (“Notification” in window) {
+  Notification.requestPermission(function (permission) {
+    // If the user accepts, let’s create a notification
+    if (permission === ‘granted’) {
+      var notification = new Notification(“My title”, {
+           tag: ‘message1’, 
+           body: “My body” 
+      }); 
+      notification.onshow  = function() { alert(‘show’);console.log(‘show’); };
+      notification.onclose = function() { alert(‘close’);console.log(‘close’); };
+      notification.onclick = function() { alert(‘click’);console.log(‘click’); };
+    }
+  });
+}
+
+ /* window.plugins.notification.local.schedule({
     title: 'My first notification',
     text: 'Thats pretty easy...',
     foreground: true,
     led: { color: '#FF00FF', on: 500, off: 500 },
     vibrate: true
-});
+});*/
  /* var pushNotification; 
   pushNotification = window.plugins.pushNotification;
 
