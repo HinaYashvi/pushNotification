@@ -91,7 +91,8 @@ ext {
 }
 
 // PLUGIN GRADLE EXTENSIONS START
-apply from: "../pushbots-cordova-plugin/celcabs-build-extras.gradle"
+apply from: "../cordova-plugin-badge/celcabs-badge.gradle"
+apply from: "../cordova-plugin-local-notification/celcabs-localnotification.gradle"
 // PLUGIN GRADLE EXTENSIONS END
 
 def hasBuildExtras = file('build-extras.gradle').exists()
@@ -260,8 +261,7 @@ dependencies {
     implementation fileTree(dir: 'libs', include: '*.jar')
     // SUB-PROJECT DEPENDENCIES START
     implementation(project(path: ":CordovaLib"))
-    compile "com.pushbots:pushbots-lib:3.1.4-c@aar"
-    compile "com.google.android.gms:play-services-gcm:+"
+    compile "com.android.support:support-v4:26.+"
     // SUB-PROJECT DEPENDENCIES END
 }
 

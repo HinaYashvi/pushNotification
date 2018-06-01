@@ -382,19 +382,51 @@ module.exports = [
         ]
     },
     {
-        "file": "plugins/pushbots-cordova-plugin/www/pushbots.js",
-        "id": "pushbots-cordova-plugin.PushbotsPlugin",
-        "pluginId": "pushbots-cordova-plugin",
+        "file": "plugins/cordova-plugin-badge/www/badge.js",
+        "id": "cordova-plugin-badge.Badge",
+        "pluginId": "cordova-plugin-badge",
         "clobbers": [
-            "PushbotsPlugin"
+            "cordova.plugins.notification.badge"
         ]
     },
     {
-        "file": "plugins/cordova-push-notifications/www/PushNotification.js",
-        "id": "cordova-push-notifications.PushNotification",
-        "pluginId": "cordova-push-notifications",
+        "file": "plugins/cordova-plugin-badge/src/browser/favico.min.js",
+        "id": "cordova-plugin-badge.Badge.Favico",
+        "pluginId": "cordova-plugin-badge",
         "clobbers": [
-            "PushNotification"
+            "cordova.plugins.notification.badge.Favico"
+        ]
+    },
+    {
+        "file": "plugins/cordova-plugin-badge/src/browser/BadgeProxy.js",
+        "id": "cordova-plugin-badge.Badge.Proxy",
+        "pluginId": "cordova-plugin-badge",
+        "runs": true
+    },
+    {
+        "file": "plugins/cordova-plugin-local-notification/www/local-notification.js",
+        "id": "cordova-plugin-local-notification.LocalNotification",
+        "pluginId": "cordova-plugin-local-notification",
+        "clobbers": [
+            "cordova.plugins.notification.local"
+        ]
+    },
+    {
+        "file": "plugins/cordova-plugin-local-notification/www/local-notification-core.js",
+        "id": "cordova-plugin-local-notification.LocalNotification.Core",
+        "pluginId": "cordova-plugin-local-notification",
+        "clobbers": [
+            "cordova.plugins.notification.local.core",
+            "plugin.notification.local.core"
+        ]
+    },
+    {
+        "file": "plugins/cordova-plugin-local-notification/www/local-notification-util.js",
+        "id": "cordova-plugin-local-notification.LocalNotification.Util",
+        "pluginId": "cordova-plugin-local-notification",
+        "merges": [
+            "cordova.plugins.notification.local.core",
+            "plugin.notification.local.core"
         ]
     }
 ];
@@ -414,8 +446,8 @@ module.exports.metadata =
     "cordova-plugin-vibration": "3.1.0",
     "cordova-plugin-whitelist": "1.3.3",
     "cordova-plugin-otp-auto-verification": "1.0.1",
-    "pushbots-cordova-plugin": "1.5.13",
-    "cordova-push-notifications": "1.2.4"
+    "cordova-plugin-badge": "0.8.7",
+    "cordova-plugin-local-notification": "0.9.0-beta.2"
 }
 // BOTTOM OF METADATA
 });

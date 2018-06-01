@@ -111,20 +111,20 @@
     "is_top_level": true,
     "variables": {}
   },
-  "pushbots-cordova-plugin": {
+  "cordova-plugin-local-notification": {
     "source": {
       "type": "registry",
-      "id": "pushbots-cordova-plugin@latest"
+      "id": "cordova-plugin-local-notification"
     },
     "is_top_level": true,
     "variables": {}
   },
-  "cordova-push-notifications": {
+  "cordova-plugin-badge": {
     "source": {
       "type": "registry",
-      "id": "cordova-push-notifications"
+      "id": "cordova-plugin-badge@>=0.8.5"
     },
-    "is_top_level": true,
+    "is_top_level": false,
     "variables": {}
   }
 }

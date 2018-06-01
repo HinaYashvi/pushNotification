@@ -47,9 +47,33 @@ function onBackKeyDown() {
           $$(".back").click();
        }
 }
+
 function checkStorage()
 { 
-  window.plugins.PushbotsPlugin.initialize("5b0548471db2dc33d672ae79", {"android":{"sender_id":"846304146142"}});
+  alert("in");
+  cordova.plugins.notification.local.schedule({
+    title: 'My first notification',
+    text: 'Thats pretty easy...',
+    foreground: true,
+    led: { color: '#FF00FF', on: 500, off: 500 },
+    vibrate: true
+});
+ /* var pushNotification; 
+  pushNotification = window.plugins.pushNotification;
+
+if ( device.platform == 'android' || device.platform == 'Android' || device.platform == "amazon-fireos" ){
+    pushNotification.register(
+    successHandler,
+    errorHandler,
+    {
+        "senderID":"846304146142",
+        "badge":"true",
+        "sound":"true",
+        "alert":"true",
+        "ecb":"onNotification"
+    }); 
+}
+ /* window.plugins.PushbotsPlugin.initialize("5b0548471db2dc33d672ae79", {"android":{"sender_id":"846304146142"}});
 // Only with First time registration
 window.plugins.PushbotsPlugin.on("registered", function(token){
   console.log("Registration Id:" + token);
@@ -57,7 +81,7 @@ window.plugins.PushbotsPlugin.on("registered", function(token){
 });
 
 //Get user registrationId/token and userId on PushBots, with evey launch of the app even launching with notification
-/*window.plugins.PushbotsPlugin.on("user:ids", function(data){
+window.plugins.PushbotsPlugin.on("user:ids", function(data){
   console.log("user:ids" + JSON.stringify(data));
   alert("JSON ::"+JSON.stringify(data));
 }); 

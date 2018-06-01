@@ -43,12 +43,13 @@
     "cordova-plugin-otp-auto-verification": {
       "PACKAGE_NAME": "com.phonegap.celcabs"
     },
-    "pushbots-cordova-plugin": {
-      "PACKAGE_NAME": "com.phonegap.celcabs"
-    },
-    "cordova-push-notifications": {
+    "cordova-plugin-local-notification": {
       "PACKAGE_NAME": "com.phonegap.celcabs"
     }
   },
-  "dependent_plugins": {}
+  "dependent_plugins": {
+    "cordova-plugin-badge": {
+      "PACKAGE_NAME": "com.phonegap.celcabs"
+    }
+  }
 }

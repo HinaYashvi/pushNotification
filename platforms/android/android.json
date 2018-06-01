@@ -57,16 +57,15 @@
               "count": 1
             },
             {
-              "xml": "<feature name=\"PushPlugin\"><param name=\"android-package\" value=\"com.plugin.gcm.PushPlugin\" /></feature>",
+              "xml": "<feature name=\"Badge\"><param name=\"android-package\" value=\"de.appplant.cordova.plugin.badge.Badge\" /></feature>",
+              "count": 1
+            },
+            {
+              "xml": "<feature name=\"LocalNotification\"><param name=\"android-package\" value=\"de.appplant.cordova.plugin.localnotification.LocalNotification\" /></feature>",
               "count": 1
             }
           ],
-          "/widget": [
-            {
-              "xml": "<feature name=\"PushbotsPlugin\"><param name=\"android-package\" value=\"com.pushbots.plugin.PushbotsPlugin\" /></feature>",
-              "count": 1
-            }
-          ]
+          "/widget": []
         }
       },
       "AndroidManifest.xml": {
@@ -113,48 +112,28 @@
           "/manifest": [
             {
               "xml": "<uses-permission android:name=\"android.permission.VIBRATE\" />",
-              "count": 3
-            },
-            {
-              "xml": "<uses-permission android:name=\"android.permission.ACCESS_NETWORK_STATE\" />",
-              "count": 1
-            },
-            {
-              "xml": "<uses-permission android:name=\"android.permission.GET_ACCOUNTS\" />",
               "count": 1
             },
             {
               "xml": "<uses-permission android:name=\"android.permission.WAKE_LOCK\" />",
               "count": 1
-            },
-            {
-              "xml": "<uses-permission android:name=\"com.google.android.c2dm.permission.RECEIVE\" />",
-              "count": 1
-            },
-            {
-              "xml": "<permission android:name=\"com.phonegap.celcabs.permission.C2D_MESSAGE\" android:protectionLevel=\"signature\" />",
-              "count": 1
-            },
-            {
-              "xml": "<uses-permission android:name=\"com.phonegap.celcabs.permission.C2D_MESSAGE\" />",
-              "count": 1
             }
           ],
           "/manifest/application": [
             {
-              "xml": "<receiver android:name=\"com.pushbots.plugin.PushHandler\" />",
+              "xml": "<provider android:authorities=\"${applicationId}.provider\" android:exported=\"false\" android:grantUriPermissions=\"true\" android:name=\"de.appplant.cordova.plugin.notification.util.AssetProvider\"><meta-data android:name=\"android.support.FILE_PROVIDER_PATHS\" android:resource=\"@xml/localnotification_provider_paths\" /></provider>",
               "count": 1
             },
             {
-              "xml": "<activity android:exported=\"true\" android:name=\"com.plugin.gcm.PushHandlerActivity\" />",
+              "xml": "<receiver android:exported=\"false\" android:name=\"de.appplant.cordova.plugin.localnotification.TriggerReceiver\" />",
               "count": 1
             },
             {
-              "xml": "<receiver android:name=\"com.plugin.gcm.CordovaGCMBroadcastReceiver\" android:permission=\"com.google.android.c2dm.permission.SEND\"><intent-filter><action android:name=\"com.google.android.c2dm.intent.RECEIVE\" /><action android:name=\"com.google.android.c2dm.intent.REGISTRATION\" /><category android:name=\"com.phonegap.celcabs\" /></intent-filter></receiver>",
+              "xml": "<receiver android:exported=\"false\" android:name=\"de.appplant.cordova.plugin.localnotification.ClearReceiver\" />",
               "count": 1
             },
             {
-              "xml": "<service android:name=\"com.plugin.gcm.GCMIntentService\" />",
+              "xml": "<activity android:exported=\"false\" android:launchMode=\"singleInstance\" android:name=\"de.appplant.cordova.plugin.localnotification.ClickReceiver\" android:theme=\"@android:style/Theme.Translucent\" />",
               "count": 1
             }
           ]
@@ -199,10 +178,10 @@
     "cordova-plugin-otp-auto-verification": {
       "PACKAGE_NAME": "com.phonegap.celcabs"
     },
-    "pushbots-cordova-plugin": {
+    "cordova-plugin-badge": {
       "PACKAGE_NAME": "com.phonegap.celcabs"
     },
-    "cordova-push-notifications": {
+    "cordova-plugin-local-notification": {
       "PACKAGE_NAME": "com.phonegap.celcabs"
     }
   },
@@ -546,19 +525,37 @@
       ]
     },
     {
-      "id": "pushbots-cordova-plugin.PushbotsPlugin",
-      "file": "plugins/pushbots-cordova-plugin/www/pushbots.js",
-      "pluginId": "pushbots-cordova-plugin",
+      "id": "cordova-plugin-badge.Badge",
+      "file": "plugins/cordova-plugin-badge/www/badge.js",
+      "pluginId": "cordova-plugin-badge",
       "clobbers": [
-        "PushbotsPlugin"
+        "cordova.plugins.notification.badge"
       ]
     },
     {
-      "id": "cordova-push-notifications.PushNotification",
-      "file": "plugins/cordova-push-notifications/www/PushNotification.js",
-      "pluginId": "cordova-push-notifications",
+      "id": "cordova-plugin-local-notification.LocalNotification",
+      "file": "plugins/cordova-plugin-local-notification/www/local-notification.js",
+      "pluginId": "cordova-plugin-local-notification",
       "clobbers": [
-        "PushNotification"
+        "cordova.plugins.notification.local"
+      ]
+    },
+    {
+      "id": "cordova-plugin-local-notification.LocalNotification.Core",
+      "file": "plugins/cordova-plugin-local-notification/www/local-notification-core.js",
+      "pluginId": "cordova-plugin-local-notification",
+      "clobbers": [
+        "cordova.plugins.notification.local.core",
+        "plugin.notification.local.core"
+      ]
+    },
+    {
+      "id": "cordova-plugin-local-notification.LocalNotification.Util",
+      "file": "plugins/cordova-plugin-local-notification/www/local-notification-util.js",
+      "pluginId": "cordova-plugin-local-notification",
+      "merges": [
+        "cordova.plugins.notification.local.core",
+        "plugin.notification.local.core"
       ]
     }
   ],
@@ -575,7 +572,7 @@
     "cordova-plugin-vibration": "3.1.0",
     "cordova-plugin-whitelist": "1.3.3",
     "cordova-plugin-otp-auto-verification": "1.0.1",
-    "pushbots-cordova-plugin": "1.5.13",
-    "cordova-push-notifications": "1.2.4"
+    "cordova-plugin-badge": "0.8.7",
+    "cordova-plugin-local-notification": "0.9.0-beta.2"
   }
 }

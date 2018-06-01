@@ -10,9 +10,6 @@
     <content src="index.html" />
     <preference name="DisallowOverscroll" value="true" />
     <preference name="android-minSdkVersion" value="15" />
-    <!--preference name="phonegap-version" value="cli-8.0.0" />
-    <preference name="android-build-tool" value="gradle" /-->
-    <preference name="showmessageinnotification" value="true" />
     <platform name="android">
         <icon density="ldpi" src="www/res/icon/android/drawable-ldpi-icon.png" />
         <icon density="mdpi" src="www/res/icon/android/drawable-mdpi-icon.png" />
@@ -111,7 +108,5 @@
     <plugin name="cordova-plugin-vibration" spec="^3.1.0" />
     <plugin name="cordova-plugin-whitelist" spec="^1.3.3" />
     <plugin name="cordova-plugin-otp-auto-verification" spec="^1.0.1" />
-    <plugin name="cordova-plugin-compat" spec="[object Object]" />
-    <plugin name="pushbots-cordova-plugin" spec="^1.5.13" />
-    <plugin name="cordova-push-notifications" spec="^1.2.4" />
+    <plugin name="cordova-plugin-local-notification" spec="^0.9.0-beta.2" />
 </widget>
