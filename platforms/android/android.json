@@ -57,7 +57,7 @@
               "count": 1
             },
             {
-              "xml": "<feature name=\"LocalNotifications\"><param name=\"android-package\" value=\"com.adobe.phonegap.notification.LocalNotifications\" /></feature>",
+              "xml": "<feature name=\"PushNotification\"><param name=\"android-package\" value=\"com.adobe.phonegap.push.PushPlugin\" /></feature>",
               "count": 1
             }
           ],
@@ -108,12 +108,40 @@
           "/manifest": [
             {
               "xml": "<uses-permission android:name=\"android.permission.VIBRATE\" />",
+              "count": 2
+            },
+            {
+              "xml": "<uses-permission android:name=\"android.permission.INTERNET\" />",
+              "count": 1
+            },
+            {
+              "xml": "<uses-permission android:name=\"android.permission.ACCESS_NETWORK_STATE\" />",
+              "count": 1
+            },
+            {
+              "xml": "<uses-permission android:name=\"android.permission.WAKE_LOCK\" />",
               "count": 1
             }
           ],
           "/manifest/application": [
             {
-              "xml": "<activity android:exported=\"true\" android:name=\"com.adobe.phonegap.notification.NotificationHandlerActivity\" android:permission=\"${applicationId}.permission.PushHandlerActivity\" />",
+              "xml": "<activity android:exported=\"true\" android:name=\"com.adobe.phonegap.push.PushHandlerActivity\" android:permission=\"${applicationId}.permission.PushHandlerActivity\" />",
+              "count": 1
+            },
+            {
+              "xml": "<receiver android:name=\"com.adobe.phonegap.push.BackgroundActionButtonHandler\" />",
+              "count": 1
+            },
+            {
+              "xml": "<receiver android:name=\"com.adobe.phonegap.push.PushDismissedHandler\" />",
+              "count": 1
+            },
+            {
+              "xml": "<service android:name=\"com.adobe.phonegap.push.FCMService\"><intent-filter><action android:name=\"com.google.firebase.MESSAGING_EVENT\" /></intent-filter></service>",
+              "count": 1
+            },
+            {
+              "xml": "<service android:name=\"com.adobe.phonegap.push.PushInstanceIDListenerService\"><intent-filter><action android:name=\"com.google.firebase.INSTANCE_ID_EVENT\" /></intent-filter></service>",
               "count": 1
             }
           ]
@@ -158,7 +186,15 @@
     "cordova-plugin-otp-auto-verification": {
       "PACKAGE_NAME": "com.phonegap.celcabs"
     },
-    "phonegap-plugin-local-notification": {
+    "cordova-support-google-services": {
+      "PACKAGE_NAME": "com.phonegap.celcabs"
+    },
+    "phonegap-plugin-multidex": {
+      "PACKAGE_NAME": "com.phonegap.celcabs"
+    },
+    "phonegap-plugin-push": {
+      "ANDROID_SUPPORT_V13_VERSION": "27.+",
+      "FCM_VERSION": "11.6.2",
       "PACKAGE_NAME": "com.phonegap.celcabs"
     }
   },
@@ -502,11 +538,11 @@
       ]
     },
     {
-      "id": "phonegap-plugin-local-notification.Notification",
-      "file": "plugins/phonegap-plugin-local-notification/www/notification.js",
-      "pluginId": "phonegap-plugin-local-notification",
+      "id": "phonegap-plugin-push.PushNotification",
+      "file": "plugins/phonegap-plugin-push/www/push.js",
+      "pluginId": "phonegap-plugin-push",
       "clobbers": [
-        "Notification"
+        "PushNotification"
       ]
     }
   ],
@@ -523,6 +559,8 @@
     "cordova-plugin-vibration": "3.1.0",
     "cordova-plugin-whitelist": "1.3.3",
     "cordova-plugin-otp-auto-verification": "1.0.1",
-    "phonegap-plugin-local-notification": "1.0.1"
+    "cordova-support-google-services": "1.1.0",
+    "phonegap-plugin-multidex": "1.0.0",
+    "phonegap-plugin-push": "2.2.3"
   }
 }

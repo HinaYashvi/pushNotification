@@ -338,45 +338,11 @@ module.exports = [
     ]
   },
   {
-    "id": "cordova-plugin-badge.Badge",
-    "file": "plugins/cordova-plugin-badge/www/badge.js",
-    "pluginId": "cordova-plugin-badge",
+    "id": "phonegap-plugin-push.PushNotification",
+    "file": "plugins/phonegap-plugin-push/www/push.js",
+    "pluginId": "phonegap-plugin-push",
     "clobbers": [
-      "cordova.plugins.notification.badge"
-    ]
-  },
-  {
-    "id": "cordova-plugin-local-notification.LocalNotification",
-    "file": "plugins/cordova-plugin-local-notification/www/local-notification.js",
-    "pluginId": "cordova-plugin-local-notification",
-    "clobbers": [
-      "cordova.plugins.notification.local"
-    ]
-  },
-  {
-    "id": "cordova-plugin-local-notification.LocalNotification.Core",
-    "file": "plugins/cordova-plugin-local-notification/www/local-notification-core.js",
-    "pluginId": "cordova-plugin-local-notification",
-    "clobbers": [
-      "cordova.plugins.notification.local.core",
-      "plugin.notification.local.core"
-    ]
-  },
-  {
-    "id": "cordova-plugin-local-notification.LocalNotification.Util",
-    "file": "plugins/cordova-plugin-local-notification/www/local-notification-util.js",
-    "pluginId": "cordova-plugin-local-notification",
-    "merges": [
-      "cordova.plugins.notification.local.core",
-      "plugin.notification.local.core"
-    ]
-  },
-  {
-    "id": "phonegap-plugin-local-notification.Notification",
-    "file": "plugins/phonegap-plugin-local-notification/www/notification.js",
-    "pluginId": "phonegap-plugin-local-notification",
-    "clobbers": [
-      "Notification"
+      "PushNotification"
     ]
   }
 ];
@@ -395,9 +361,9 @@ module.exports.metadata =
   "cordova-plugin-vibration": "3.1.0",
   "cordova-plugin-whitelist": "1.3.3",
   "cordova-plugin-otp-auto-verification": "1.0.1",
-  "cordova-plugin-badge": "0.8.7",
-  "cordova-plugin-local-notification": "0.9.0-beta.2",
-  "phonegap-plugin-local-notification": "1.0.1"
+  "cordova-support-google-services": "1.1.0",
+  "phonegap-plugin-multidex": "1.0.0",
+  "phonegap-plugin-push": "2.2.3"
 };
 // BOTTOM OF METADATA
 });

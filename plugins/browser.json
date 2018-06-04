@@ -43,7 +43,7 @@
     "cordova-plugin-otp-auto-verification": {
       "PACKAGE_NAME": "com.phonegap.celcabs"
     },
-    "phonegap-plugin-local-notification": {
+    "phonegap-plugin-push": {
       "PACKAGE_NAME": "com.phonegap.celcabs"
     }
   },

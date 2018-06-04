@@ -51,36 +51,7 @@ function onBackKeyDown() {
 
 function checkStorage()
 { 
-  alert("in");
-
-  Notification.requestPermission().then(function(result) {
-  if (result === 'denied') {
-    console.log('Permission wasn\'t granted. Allow a retry.');
-    alert('Permission wasn\'t granted. Allow a retry.');
-    return;
-  }
-  if (result === 'default') {
-    console.log('The permission request was dismissed.');
-    alert('The permission request was dismissed.');
-    return;
-  }
-  // Do something with the granted permission.
-});
-
-  if (“Notification” in window) {
-  Notification.requestPermission(function (permission) {
-    // If the user accepts, let’s create a notification
-    if (permission === ‘granted’) {
-      var notification = new Notification(“My title”, {
-           tag: ‘message1’, 
-           body: “My body” 
-      }); 
-      notification.onshow  = function() { alert(‘show’);console.log(‘show’); };
-      notification.onclose = function() { alert(‘close’);console.log(‘close’); };
-      notification.onclick = function() { alert(‘click’);console.log(‘click’); };
-    }
-  });
-}
+  
 
  /* window.plugins.notification.local.schedule({
     title: 'My first notification',
@@ -138,6 +109,54 @@ window.plugins.PushbotsPlugin.on("notification:clicked", function(data){
    checkConnection();
    //alert("in checkStorage func");
     var value = window.localStorage.getItem("session_mobilenum");
+
+
+    var push = PushNotification.init({
+  android: {
+      "senderID": "846304146142","icon": "phonegap", "iconColor": "blue"
+  },
+    browser: {
+        pushServiceURL: 'http://push.api.phonegap.com/v1/push'
+    },
+  ios: {
+    alert: "true",
+    badge: "true",
+    sound: "true"
+  },
+  windows: {}
+});
+
+push.on('registration', (data) => {
+  // data.registrationId
+  alert(data.registrationId);
+  console.log(data.registrationId);
+});
+
+push.on('notification', (data) => {
+  /*alert(data.title);
+  console.log(data.title);
+  alert(data.message);
+  console.log(data.message);*/
+  //title:"Large Icon",
+  message:data.message
+    //message:"Loaded from drawables folder"
+    //image: "twitter",
+    //ledColor: [39, 0, 255, 1],
+   // priority: 1
+  // data.message,
+  // data.title,
+  // data.count,
+  // data.sound,
+  // data.image,
+  // data.additionalData
+});
+
+push.on('error', (e) => {
+  // e.message
+  alert(e.message);
+  console.log(e.message);
+});
+//push.setApplicationIconBadgeNumber(successHandler, errorHandler, count);
    /* var version=1;
     var base_url='http://milkyplus.co.in/app/';
     $.ajax({url: base_url+'chk_version/'+version, success: function(result){
