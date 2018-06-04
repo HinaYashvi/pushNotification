@@ -4,7 +4,8 @@ var app = new Framework7({
   root: '#app', // App root element
   pushState:true,  
   name: 'CELCAB',  // App Name
-  id: 'com.myapp.test',  // App id
+  //id: 'com.myapp.test',  // App id
+  id: 'com.phonegap.celcabs',
   panel: {
     swipe: 'left', // Enable swipe panel
   },
@@ -30,7 +31,7 @@ var mainView = app.views.create('.view-main');
 });*/
 
 $( document ).ready(function() {  
-    document.addEventListener("deviceready", checkStorage, false); 
+    //document.addEventListener("deviceready", checkStorage, false); 
     document.addEventListener("backbutton", onBackKeyDown, false);
     // friz_fun();
 });
@@ -109,11 +110,11 @@ window.plugins.PushbotsPlugin.on("notification:clicked", function(data){
    checkConnection();
    //alert("in checkStorage func");
     var value = window.localStorage.getItem("session_mobilenum");
-
+alert("in deviceready");
 
     var push = PushNotification.init({
   android: {
-      "senderID": "846304146142","icon": "phonegap", "iconColor": "blue"
+      "senderID": "194599416563","icon": "phonegap", "iconColor": "blue"
   },
     browser: {
         pushServiceURL: 'http://push.api.phonegap.com/v1/push'
@@ -128,17 +129,17 @@ window.plugins.PushbotsPlugin.on("notification:clicked", function(data){
 
 push.on('registration', (data) => {
   // data.registrationId
-  alert(data.registrationId);
+  alert(data.registrationId+"******");
   console.log(data.registrationId);
 });
 
 push.on('notification', (data) => {
-  /*alert(data.title);
+  alert(data.title);
   console.log(data.title);
   alert(data.message);
-  console.log(data.message);*/
-  //title:"Large Icon",
-  message:data.message
+  console.log(data.message);
+ // title:"Large Icon"
+  //message:data.message
     //message:"Loaded from drawables folder"
     //image: "twitter",
     //ledColor: [39, 0, 255, 1],

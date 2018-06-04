@@ -43,7 +43,7 @@
     "cordova-plugin-otp-auto-verification": {
       "PACKAGE_NAME": "com.phonegap.celcabs"
     },
-    "phonegap-plugin-push": {
+    "cordova-plugin-firebase": {
       "PACKAGE_NAME": "com.phonegap.celcabs"
     }
   },

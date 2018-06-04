@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "351898542534",
+    "firebase_url": "https://pushnotificationapp-62f37.firebaseio.com",
+    "project_id": "pushnotificationapp-62f37",
+    "storage_bucket": "pushnotificationapp-62f37.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:351898542534:android:06be7a28295ccb0d",
+        "android_client_info": {
+          "package_name": "com.phonegap.celcabs"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "351898542534-v2pls6qdnvbem548384as8msq82c54fn.apps.googleusercontent.com",
+          "client_type": 3
+        },
+        {
+          "client_id": "351898542534-v2pls6qdnvbem548384as8msq82c54fn.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB5KxRrX6qY3K7ci7Hf3IHf3cHoKr5fskI"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

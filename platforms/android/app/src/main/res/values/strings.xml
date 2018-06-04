@@ -3,4 +3,6 @@
     <string name="app_name">Celcabs</string>
     <string name="launcher_name">@string/app_name</string>
     <string name="activity_name">@string/launcher_name</string>
+    <string name="google_app_id">1:351898542534:android:06be7a28295ccb0d</string>
+    <string name="google_api_key">AIzaSyB5KxRrX6qY3K7ci7Hf3IHf3cHoKr5fskI</string>
 </resources>
